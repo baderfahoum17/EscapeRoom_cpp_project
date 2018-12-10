@@ -1,0 +1,19 @@
+############################
+## UNREAL GENERATED FILES ##
+############################
+
+*/Build
+*/Binaries
+*/DerivedDataCache
+*/Intermediate
+*/Saved
+*_BuiltData.uasset
+BuilidingEscape/Content/StarterContent/
+
+###################################
+## Visual Studio GENERATED FILES ##
+###################################
+
+*.db
+*.db-wal
+*.VC.opendb
