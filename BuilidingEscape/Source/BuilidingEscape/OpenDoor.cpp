@@ -1,6 +1,8 @@
 // copy right bader fahoum2018
-
 #include "OpenDoor.h"
+#include "Engine/World.h"
+#include "GameFramework/PlayerController.h"
+
 #include "GameFramework/Actor.h"
 #include "Runtime/Engine/Classes/GameFramework/Actor.h"
 
@@ -20,6 +22,7 @@ void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	ActorThatOpens = GetWorld()->GetFirstPlayerController()->GetPawn();
 	
 }
 
