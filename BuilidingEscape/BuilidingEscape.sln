@@ -2,15 +2,15 @@
 # Visual Studio 15
 VisualStudioVersion = 15.0.25807.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{DC0AE05B-6E10-4158-B2CE-D2A9D1BF04E0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{6FF02460-51FB-4111-A6A4-FA6CC46D4A18}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{ACCB285B-F1D3-4A3A-8200-77A8375B219D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{3F3EC937-E99F-462C-A6C3-4CFC1A63EBE4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UE4", "Intermediate\ProjectFiles\UE4.vcxproj", "{30BD25E4-CB8E-42D9-BA15-CCE0EE758EF2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuilidingEscape", "Intermediate\ProjectFiles\BuilidingEscape.vcxproj", "{7E8FA5D1-483E-476A-A7BA-E8D11396BFDD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visualizers", "Visualizers", "{ECCA0D78-E881-4BB0-8572-0041721280E4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visualizers", "Visualizers", "{A84C42C7-AD73-4E83-B071-9C0B2C8A0897}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\..\..\..\Program Files\Epic Games\UE_4.21\Engine\Extras\VisualStudioDebugging\UE4.natvis = ..\..\..\..\..\..\..\Program Files\Epic Games\UE_4.21\Engine\Extras\VisualStudioDebugging\UE4.natvis
 	EndProjectSection
@@ -80,8 +80,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{30BD25E4-CB8E-42D9-BA15-CCE0EE758EF2} = {DC0AE05B-6E10-4158-B2CE-D2A9D1BF04E0}
-		{7E8FA5D1-483E-476A-A7BA-E8D11396BFDD} = {ACCB285B-F1D3-4A3A-8200-77A8375B219D}
-		{7E8FA5D1-483E-476A-A7BA-E8D11396BFDD} = {ACCB285B-F1D3-4A3A-8200-77A8375B219D}
+		{30BD25E4-CB8E-42D9-BA15-CCE0EE758EF2} = {6FF02460-51FB-4111-A6A4-FA6CC46D4A18}
+		{7E8FA5D1-483E-476A-A7BA-E8D11396BFDD} = {3F3EC937-E99F-462C-A6C3-4CFC1A63EBE4}
+		{7E8FA5D1-483E-476A-A7BA-E8D11396BFDD} = {3F3EC937-E99F-462C-A6C3-4CFC1A63EBE4}
 	EndGlobalSection
 EndGlobal
