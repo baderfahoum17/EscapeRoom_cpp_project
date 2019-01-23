@@ -23,6 +23,8 @@ protected:
 
 	void OpenDoor();
 
+	void CloseDoor();
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -30,11 +32,17 @@ public:
 private:
 	//any syntax error with uproperty will cause really weird errors, please pay attention 
 	UPROPERTY(VisibleAnywhere)
-	float OpenAngle = 90.f;
+	float OpenAngle = -90.f;
 	
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* PressurePlate;
 
+	UPROPERTY(EditAnywhere)
+	float DoorCloseDelay = 1.f;
+
+	float LastDoorOpenTime;
+
 //	UPROPERTY(EditAnywhere)
 	AActor* ActorThatOpens; // remember pawn inherits from actor 
+	AActor* DoorOwner;
 };
