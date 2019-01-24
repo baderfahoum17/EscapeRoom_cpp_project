@@ -2,6 +2,7 @@
 
 #include "Grabber.h"
 #include "Engine/World.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/Actor.h"
 #include "Runtime/Engine/Classes/GameFramework/Actor.h"
@@ -26,7 +27,34 @@ void UGrabber::BeginPlay()
 
 	UE_LOG(LogTemp, Warning, TEXT("Grabber reporting for Duty!"));
 
+	// look for attached Physics Handle
+	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (PhysicsHandle) {
+		// physics handle found 
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("%s missing physics handle component"), *(GetOwner()->GetName()));
+	}
+
+	// Look for attached InputComponent
+	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	if (InputComponent) {
+		// InputComponent found 
+		UE_LOG(LogTemp, Warning, TEXT("INPUT COMPONENT found"));
+		// bind the input Action
+		InputComponent->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("%s missing INPUT Component"), *(GetOwner()->GetName()));
+	}
+
 	
+}
+void UGrabber::Grab()
+{
+	// Ray-Cast and grab whats in reach
+	UE_LOG(LogTemp, Warning, TEXT("grab Func in action "));
+
 }
 
 
@@ -62,7 +90,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 		0.f,
 		10.f
 	);
-
+	
 	///setup query paramertrs
 	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
 
@@ -83,5 +111,6 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	
 
 }
+
 
 

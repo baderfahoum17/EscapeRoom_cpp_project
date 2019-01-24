@@ -1,9 +1,10 @@
 // copy right bader fahoum2018
 
 #pragma once
-
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Components/InputComponent.h"
 #include "Grabber.generated.h"
 
 
@@ -26,5 +27,10 @@ public:
 private:
 	// how far ahead of the player can we reach in cm
 	float Reach = 100.f;
-		
+	// PHYSICS handler component 
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UInputComponent* InputComponent = nullptr;
+	
+	//Ray-cast and grab whats in reach
+	void Grab();
 };
