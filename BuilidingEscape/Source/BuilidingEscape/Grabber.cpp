@@ -43,6 +43,8 @@ void UGrabber::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("INPUT COMPONENT found"));
 		// bind the input Action
 		InputComponent->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+		InputComponent->BindAction("Grab", IE_Released, this, &UGrabber::Release);
+
 	}
 	else {
 		UE_LOG(LogTemp, Error, TEXT("%s missing INPUT Component"), *(GetOwner()->GetName()));
@@ -53,7 +55,13 @@ void UGrabber::BeginPlay()
 void UGrabber::Grab()
 {
 	// Ray-Cast and grab whats in reach
-	UE_LOG(LogTemp, Warning, TEXT("GRAB Func in action "));
+	UE_LOG(LogTemp, Warning, TEXT("GRAB pressed "));
+
+}
+
+void UGrabber::Release()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Grab Released "));
 
 }
 
