@@ -53,7 +53,7 @@ void UGrabber::BeginPlay()
 void UGrabber::Grab()
 {
 	// Ray-Cast and grab whats in reach
-	UE_LOG(LogTemp, Warning, TEXT("grab Func in action "));
+	UE_LOG(LogTemp, Warning, TEXT("GRAB Func in action "));
 
 }
 
