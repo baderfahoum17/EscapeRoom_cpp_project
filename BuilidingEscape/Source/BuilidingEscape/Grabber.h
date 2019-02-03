@@ -24,6 +24,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+
 private:
 	// how far ahead of the player can we reach in cm
 	float Reach = 100.f;
@@ -36,4 +38,15 @@ private:
 
 	//called when Grab is released
 	void Release();
+
+	//find attached physics handle 
+	void FindPhysicsHandleComponent();
+
+	// Setup (assumed) attached input component
+	// Look for attached InputComponent
+	void SetupInputComponent();
+	
+	// Return hit for first physics body in reach
+	FHitResult GetFirstPhysicsBodyInReach() const;
+
 };
