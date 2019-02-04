@@ -52,6 +52,7 @@ void UGrabber::Grab()
 	//If we hit something then attach a physics handle
 	if (ActorHit) {
 		// attach physics handle
+		if (!PhysicsHandle) { return; } // bail out of method if pointer is not safe
 		PhysicsHandle->GrabComponent(
 			ComponentToGrab,
 			NAME_None,
@@ -68,6 +69,7 @@ inline void UGrabber::Release()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Grab Released "));
 	// release physics handle
+	if (!PhysicsHandle) { return; } // bail out of method if pointer is not safe
 	PhysicsHandle->ReleaseComponent();
 }
 
@@ -77,6 +79,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	
 	FVector LineTranceEnd = GetReachLineEnd();
+	if (!PhysicsHandle) { return; }
 	// if the physics handle is attached
 	if (PhysicsHandle->GrabbedComponent) {
 		// move the object we're holding
